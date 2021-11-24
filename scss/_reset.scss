@@ -1,0 +1,83 @@
+//FONT INSTALL
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700&display=swap');
+
+//CSS RESET
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+a {
+    text-decoration: none; /* no underline */
+}
+
+//CONTAINER SETTINGS
+.container {
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+//MEDIA QUERIES
+@mixin desktop-screen {
+    @media (min-width: 969px) { @content };
+}
+
+//COLOR VARIABLES
+$background: #3A4663;
+$display-background: #181F33;
+$button-color: #EAE3DC;;
+$red: #D03F2F;
+$white: #FFFFFF;
+$number-color: #434A59;
+$button-div: #242D44;
+$delete-reset-button-color: #647198;
+
+// $background-two: #3A4663;
+// $button-color-two: #EAE3DC;;
+// $red-two: #D03F2F;
+// $white-two: #FFFFFF;
+// $number-color-two: #434A59;
+// $button-div-two: #242D44;
+// $delete-reset-button-color-two: #647198;
+
+// $background-three: #3A4663;
+// $button-color-three: #EAE3DC;;
+// $red-three: #D03F2F;
+// $white-three: #FFFFFF;
+// $number-color-three: #434A59;
+// $button-div-three: #242D44;
+// $delete-reset-button-color-three: #647198;
+
+
+//FONT FAMILY
+@mixin font($fontSize, $lineHeight, $color){
+    font-family: 'Spartan', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    color: $color;
+}
+
+h1 {
+    @include font(32px, 36px, $white);
+}
+
+p {
+    @include font(12px, 13px, $white);
+}
+
+//CUSTOM CLASSES
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
