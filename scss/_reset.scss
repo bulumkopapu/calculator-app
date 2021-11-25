@@ -24,7 +24,7 @@ a {
 
 //MEDIA QUERIES
 @mixin desktop-screen {
-    @media (min-width: 969px) { @content };
+    @media (min-width: 540px) { @content };
 }
 
 //COLOR VARIABLES
@@ -70,6 +70,10 @@ h1 {
 
 p {
     @include font(12px, 13px, $white);
+}
+
+#del, #reset, #equal{
+    @include font(16px, 18px, $white);
 }
 
 //CUSTOM CLASSES

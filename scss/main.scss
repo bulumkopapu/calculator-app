@@ -12,7 +12,9 @@ body {
     align-items: center;
     margin-top: 28px;
     margin-bottom: 32px;
-
+    @include desktop-screen {
+        margin-top: 96px;
+    }
     .switch-section {
         display: flex;
         width: 141px;
@@ -46,6 +48,7 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
 
             input {
                 display: none;
@@ -81,44 +84,110 @@ body {
     align-items: center;
     justify-content: flex-end;
     margin-bottom: 24px;
+    @include desktop-screen {
+        height: 128px;
+        padding: 0 32px 0 32px;
+    }
     p {
         font-size: 32px;
+        @include desktop-screen {
+            font-size: 48px;
+        }
     }
 }
 
-.calculator-button-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 13px;
-
+.calculator {
     background-color: $button-div;
     border-radius: 10px;
     padding: 24px;
-
-    input[type = button] {
-        @include font(28px, 31px, $button-div);
-        height: 62px;
-        width: 100%;
-        border: none;
-        border-radius: 5px;
-        background: $button-color;
-        box-shadow: inset 0px -4px 0px #B3A497;
-    }
-}
-.reset-equals{
-        
-    input[type = button] {
-        @include font(28px, 31px, $button-div);
-        height: 62px;
-        width: 100%;
-        border: none;
-        border-radius: 5px;
-        background: $button-color;
-        box-shadow: inset 0px -4px 0px #B3A497;
+    @include desktop-screen {
+        padding: 32px;
     }
 
+    #del, #reset {
+        background: #647198;
+        box-shadow: inset 0px -4px 0px #414E73;
+        transition: 0.1s all;
+        &:hover{
+            background: #A2B2E1;
+        }
+        &:active{
+            transform: scale(0.98);
+            box-shadow: inset 0px -2px 0px #414E73;
+        }
+
+    }
+
+    #equal {
+        background: $red;
+        box-shadow: inset 0px -4px 0px #93261A;
+        transition: 0.1s all;
+        &:hover{
+            background: #F96B5B;
+        }
+        &:active{
+            transform: scale(0.98);
+            box-shadow: inset 0px -2px 0px #93261A;
+        }
+    }
+
+    .calculator-button-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 13px;
+        margin-bottom: 13px;
+
+        @include desktop-screen {
+            gap: 24px;
+            margin-bottom: 24px
+        }
+    
+        input[type = button] {
+            @include font(28px, 31px, $button-div);
+            height: 62px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            background: $button-color;
+            box-shadow: inset 0px -4px 0px #B3A497;
+            cursor: pointer;
+            transition: 0.1s all;
+
+            &:hover{
+                background: #FFFFFE;
+            }
+
+            &:active{
+                transform: scale(0.98);
+                box-shadow: inset 0px -2px 0px #B3A497;
+            }
+        }
+    }
+    .reset-equals{ 
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 13px;
+
+        @include desktop-screen {
+            gap: 24px;
+        }
+
+        input[type = button] {
+            @include font(28px, 31px, $button-div);
+            height: 62px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            background: $button-color;
+            box-shadow: inset 0px -4px 0px #B3A497;
+            cursor: pointer;
+        }
+    }
 }
+
+
 
 
 
