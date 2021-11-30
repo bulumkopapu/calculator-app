@@ -1,6 +1,6 @@
 @import 'reset';
 body {
-    background: $background;
+    background: var(--bg);
     height: 100vh;
     overflow-x: hidden;
     padding: 0 24px 0 24px;
@@ -37,7 +37,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        background: $button-div;
+        background: var(--theme-switch-input);
         border-radius: 13px;
         width: 71px;
         height: 26px;
@@ -57,11 +57,15 @@ body {
             .checkmark {
                 width: 16px;
                 height: 16px;
-                background-color: $red;
+                background-color: var(--theme-switch-ball);
                 border-radius: 50%;
                 display: inline-block;
                 opacity: 0;
                 transition: opacity 0.3s ease;
+
+                &:hover{
+                    background-color: var(--equal-hover);
+                }
              }
 
          }
@@ -75,7 +79,7 @@ body {
 }
 
 .display-section {
-    background: $display-background;
+    background: var(--bg-display);
     width: 100%;
     height: 88px;
     border-radius: 10px;
@@ -97,7 +101,7 @@ body {
 }
 
 .calculator {
-    background-color: $button-div;
+    background-color: var(--bg-calculator);
     border-radius: 10px;
     padding: 24px;
     @include desktop-screen {
@@ -105,29 +109,31 @@ body {
     }
 
     #del, #reset {
-        background: #647198;
-        box-shadow: inset 0px -4px 0px #414E73;
+        @include font(20px, 22px, var(--delete-reset-text-color));
+        background: var(--delete-reset-color);
+        box-shadow: inset 0px -4px 0px var(--delete-reset-color-shadow);
         transition: 0.1s all;
         &:hover{
-            background: #A2B2E1;
+            background: var(--delete-reset-color-hover);
         }
         &:active{
             transform: scale(0.98);
-            box-shadow: inset 0px -2px 0px #414E73;
+            box-shadow: inset 0px -2px 0px var(--delete-reset-color-shadow);
         }
 
     }
 
     #equal {
-        background: $red;
-        box-shadow: inset 0px -4px 0px #93261A;
+        @include font(20px, 22px, var(--equal-text-color));
+        background: var(--equal);
+        box-shadow: inset 0px -4px 0px var(--equal-shadow);
         transition: 0.1s all;
         &:hover{
-            background: #F96B5B;
+            background: var(--equal-hover);
         }
         &:active{
             transform: scale(0.98);
-            box-shadow: inset 0px -2px 0px #93261A;
+            box-shadow: inset 0px -2px 0px var(--equal-shadow);
         }
     }
 
@@ -144,23 +150,23 @@ body {
         }
     
         input[type = button] {
-            @include font(28px, 31px, $button-div);
+            @include font(28px, 31px, var(--button-number-color));
             height: 62px;
             width: 100%;
             border: none;
             border-radius: 5px;
-            background: $button-color;
-            box-shadow: inset 0px -4px 0px #B3A497;
+            background: var(--button-bg-color);;
+            box-shadow: inset 0px -4px 0px var(--button-color-shadow);
             cursor: pointer;
             transition: 0.1s all;
 
             &:hover{
-                background: #FFFFFE;
+                background: var(--button-color-hover);
             }
 
             &:active{
                 transform: scale(0.98);
-                box-shadow: inset 0px -2px 0px #B3A497;
+                box-shadow: inset 0px -2px 0px var(--button-color-shadow);
             }
         }
     }
@@ -175,12 +181,11 @@ body {
         }
 
         input[type = button] {
-            @include font(28px, 31px, $button-div);
             height: 62px;
             width: 100%;
             border: none;
             border-radius: 5px;
-            background: $button-color;
+            // background: $button-color;
             box-shadow: inset 0px -4px 0px #B3A497;
             cursor: pointer;
         }

@@ -28,31 +28,120 @@ a {
 }
 
 //COLOR VARIABLES
-$background: #3A4663;
-$display-background: #181F33;
-$button-color: #EAE3DC;;
-$red: #D03F2F;
-$white: #FFFFFF;
-$number-color: #434A59;
-$button-div: #242D44;
-$delete-reset-button-color: #647198;
+:root {
+    --red-one: #D03F2F;
+    --red-two: #93261A;
+    --red-three: #F96B5B;
+    --navy-one: #3A4663;
+    --navy-two: #242D44;
+    --navy-three: #181F33;
+    --navy-four: #242D44;
+    --navy-five: #434A59;
+    --navy-six: #647198;
+    --navy-seven: #414E73;
+    --navy-nine: #A2B2E1;
+    --white: #ffffff;
+    --cream-white: #EAE3DC;
+    --cream-white-two: #B3A497;
+    --cream-white-three: #FFFFFE;
 
-// $background-two: #3A4663;
-// $button-color-two: #EAE3DC;;
-// $red-two: #D03F2F;
-// $white-two: #FFFFFF;
-// $number-color-two: #434A59;
-// $button-div-two: #242D44;
-// $delete-reset-button-color-two: #647198;
+    --off-white-one: #E6E6E6;
+    --off-white-two: #D2CDCD;
+    --off-white-three: #EEEEEE;
+    --off-white-four: #E5E4E1;
+    --off-white-five: #A79E91;
+    --dark-gray: #36362C;
+    --green-one: #378187;
+    --green-two: #1B6066;
+    --green-three: #62B5BC;
+    --orange-one: #C85402;
+    --orange-two: #873901;
+    --orange-three: #FF8A38;
 
-// $background-three: #3A4663;
-// $button-color-three: #EAE3DC;;
-// $red-three: #D03F2F;
-// $white-three: #FFFFFF;
-// $number-color-three: #434A59;
-// $button-div-three: #242D44;
-// $delete-reset-button-color-three: #647198;
+    --purple-one: #17062A;
+    --purple-two: #1E0936;
+    --purple-three: #331C4D;
+    --purple-four: #881C9E;
+    --purple-five: #56077C;
+    --purple-six: #BE15F4;
+    --purple-seven: #6C34AC;
+    --purple-eight: #8631AF;
+    --yellow: #FFE53D;
+    --dark-gray-two:#1A2327;
+    --turquoise-one: #00DED0;
+    --turquoise-two: #6CF9F1;
+    --turquoise-three: #93FFF8;
+}
 
+.theme-one {
+    --theme-switch-ball: var(--red-one);
+    --theme-switch-input: var(--navy-two);
+    --hOne-color: var(--white);
+    --paragraph-color: var(--white);
+    --bg: var(--navy-one);
+    --bg-display: var(--navy-three);
+    --display-paragraph: var(--white);
+    --bg-calculator: var(--navy-four);
+    --button-number-color: var(--navy-five);
+    --button-bg-color: var(--cream-white);
+    --button-color-shadow: var(--cream-white-two);
+    --button-color-hover: var(--cream-white-three);
+    --delete-reset-color: var(--navy-six);
+    --delete-reset-text-color: var(--white);
+    --delete-reset-color-shadow: var(--navy-seven);
+    --delete-reset-color-hover: var(--navy-nine);
+    --equal: var(--red-one);
+    --equal-text-color: var(--white);
+    --equal-shadow: var(--red-two);
+    --equal-hover: var(--red-three);
+
+}
+
+.theme-two {
+    --theme-switch-ball: var(--orange-one);
+    --theme-switch-input: var(--off-white-two);
+    --hOne-color: var(--dark-gray);
+    --paragraph-color: var(--dark-gray);
+    --bg: var(--off-white-one);
+    --bg-display: var(--off-white-three);
+    --display-paragraph: var(--dark-gray);
+    --bg-calculator: var(--off-white-two);
+    --button-number-color: var(--dark-gray);
+    --button-bg-color: var(--off-white-four);
+    --button-color-shadow: var(--off-white-five);
+    --button-color-hover: var(--white);
+    --delete-reset-color: var(--green-one);
+    --delete-reset-text-color: var(--white);
+    --delete-reset-color-shadow: var(--green-two);
+    --delete-reset-color-hover: var(--green-three);
+    --equal: var(--orange-one);
+    --equal-text-color: var(--white);
+    --equal-shadow: var(--orange-two);
+    --equal-hover: var(--orange-three);
+}
+
+.theme-three {
+    --theme-switch-ball: var(--turquoise-one);
+    --theme-switch-input: var(--purple-two);
+    --hOne-color: var(--yellow);
+    --paragraph-color: var(--yellow);
+    --bg: var(--purple-one);
+    --bg-display: var(--purple-two);
+    --display-paragraph: var(--yellow);
+    --bg-calculator: var(--purple-two);
+    --button-number-color: var(--yellow);
+    --button-bg-color: var(--purple-three);
+    --button-color-shadow: var(--purple-four);
+    --button-color-hover: var(--purple-seven);
+    --delete-reset-color: var(--purple-five);
+    --delete-reset-text-color: var(--white);
+    --delete-reset-color-shadow: var(--purple-six);
+    --delete-reset-color-hover: var(--purple-eight);
+    --equal: var(--turquoise-one);
+    --equal-text-color: var(--dark-gray-two);
+    --equal-shadow: var(--turquoise-two);
+    --equal-hover: var(--turquoise-three);
+}
 
 //FONT FAMILY
 @mixin font($fontSize, $lineHeight, $color){
@@ -65,15 +154,15 @@ $delete-reset-button-color: #647198;
 }
 
 h1 {
-    @include font(32px, 36px, $white);
+    @include font(32px, 36px, var(--hOne-color));
 }
 
 p {
-    @include font(12px, 13px, $white);
+    @include font(12px, 13px, var(--hOne-color));
 }
 
 #del, #reset, #equal{
-    @include font(16px, 18px, $white);
+    @include font(16px, 18px, var(--hOne-color));
 }
 
 //CUSTOM CLASSES
