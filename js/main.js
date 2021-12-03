@@ -5,6 +5,9 @@ const cachedTheme = localStorage.getItem('theme');
 const radioButtons = document.querySelectorAll('input[name="toggle-state"]');
 const body = document.body;
 
+const displayArea = document.getElementById('display-area');
+const buttons = Array.from(document.querySelectorAll( ".calculator-button-section input[type = button], .reset-equals input[type = button]"));
+
 
 //CHECKING FOR INITIAL PAGE LOAD
 if(firstRadioButton.checked){
@@ -46,3 +49,31 @@ for (const radioButton of radioButtons) {
     }
 }
 
+//CALCULATOR FUNCTIONALITY
+
+buttons.map( button => {
+    button.addEventListener('click', (e) => {
+        switch(e.target.value){
+            case 'RESET':
+                displayArea.innerText = "";
+                break;
+            case 'DEL':
+                if(displayArea.innerText){
+                    displayArea.innerText = displayArea.innerText.slice(0, -1);
+                }
+                break;
+            case 'x':
+                displayArea.innerText += "*";
+                break;
+            case '=':
+                try {
+                    displayArea.innerText = eval(displayArea.innerText);
+                } catch {
+                    displayArea.innerText = 'Error';
+                }
+                break;
+            default:
+                displayArea.innerText += e.target.value;
+        }
+    })
+});
